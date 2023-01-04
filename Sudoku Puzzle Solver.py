@@ -1,12 +1,12 @@
 
 def find_next_empty(puzzle):
 
-    #finds next empty r,c rep by -1
+    #finds next empty r,c rep by 0
     #otherwise return None, None
     
     for r in range(9):
         for c in range(9):
-            if puzzle[r][c] == -1:
+            if puzzle[r][c] == 0:
                 return r,c
 
     return None, None
@@ -56,21 +56,21 @@ def solve_sudoku(puzzle):
             if solve_sudoku(puzzle):
                 return True
             
-        puzzle[row][col] = -1;
+        puzzle[row][col] = 0;
         
     return False
 
 if __name__ == '__main__':
     example_board = [
-        [3,9,-1,-1,5,-1,-1,-1,-1],
-        [-1,-1,-1,2,-1,-1,-1,-1,5],
-        [-1,-1,-1,7,1,9,-1,8,-1],
-        [-1,5,-1,-1,6,8,-1,-1,-1],
-        [2,-1,6,-1,-1,3,-1,-1,-1],
-        [-1,-1,-1,-1,-1,-1,-1,-1,4],
-        [5,-1,-1,-1,-1,-1,-1,-1,-1],
-        [6,7,-1,-1,-1,5,-1,4,-1],
-        [1,-1,9,-1,-1,-1,2,-1,-1]]
+        [3,9,0,0,5,0,0,0,0],
+        [0,0,0,2,0,0,0,0,5],
+        [0,0,0,7,1,9,0,8,0],
+        [0,5,0,0,6,8,0,0,0],
+        [2,0,6,0,0,3,0,0,0],
+        [0,0,0,0,0,0,0,0,4],
+        [5,0,0,0,0,0,0,0,0],
+        [6,7,0,0,0,5,0,4,0],
+        [1,0,9,0,0,0,2,0,0]]
 
     for i in example_board:
         print(i);

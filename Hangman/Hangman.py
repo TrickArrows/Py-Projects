@@ -33,4 +33,4 @@ def hangman():
     else:
         print(f"you won!! the word is {word}\n\n")
 
-hangman()
+hangman();
